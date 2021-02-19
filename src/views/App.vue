@@ -9,17 +9,18 @@
 <script>
 export default {
   mounted() {
-    debugger;
     console.log("abc");
   },
 };
 </script>
 <style lang='scss'>
 $color: red;
+
 .aa {
   .abc {
     color: $color;
     box-sizing: border-box;
+    font-size: 11pt;
   }
 }
 </style>
