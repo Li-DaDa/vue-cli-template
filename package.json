@@ -1,0 +1,20 @@
+{
+  "name": "vue-cli-template",
+  "version": "1.0.0",
+  "description": "基于vue的开发搭建",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Li-DaDa/vue-cli-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Li-DaDa/vue-cli-template/issues"
+  },
+  "homepage": "https://github.com/Li-DaDa/vue-cli-template#readme"
+}
