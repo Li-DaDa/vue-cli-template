@@ -1,16 +1,23 @@
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const baseConfig = require('./webpack.config.base');
 
 const { styleModule } = require('./webpack.base');
 
+const plugins = [
+  new CleanWebpackPlugin(),
+  new MiniCssExtractPlugin(),
+];
+
+if (process.env.BUNDLE_ANALYZER) {
+  plugins.push(new BundleAnalyzerPlugin());
+}
+
 const config = merge(baseConfig, {
   mode: 'production',
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
-  ],
+  plugins,
   module: {
     rules: [
       ...styleModule(),
