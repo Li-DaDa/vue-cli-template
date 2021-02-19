@@ -1,42 +1,42 @@
-const HtmlPlugin = require('html-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const { resolve } = require('../utils/path')
+const HtmlPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { resolve } = require('../utils/path');
 
 const config = {
   entry: {
-    main: resolve('../src/main.js')
+    main: resolve('../src/main.js'),
   },
   output: {
     filename: '[name]-[contenthash:6].js',
-    path: resolve('../dist')
+    path: resolve('../dist'),
   },
   resolve: {
     alias: {
-      "@": resolve('../src')
+      '@': resolve('../src'),
     },
-    extensions: ['.js', '.vue']
+    extensions: ['.js', '.vue'],
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       }, {
         test: /\.(png|jpg|jpeg|gif)$/,
-        use: ['url-loader']
+        use: ['url-loader'],
       }, {
         test: /\.vue$/,
-        use: ['vue-loader']
-      }
-    ]
+        use: ['vue-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlPlugin({
-      template: resolve('../public/index.html')
+      template: resolve('../public/index.html'),
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
   ],
 
-}
+};
 
-module.exports = config
+module.exports = config;

@@ -1,24 +1,24 @@
-const { merge } = require('webpack-merge')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const baseConfig = require('./webpack.config.base')
+const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const baseConfig = require('./webpack.config.base');
 
-const { styleModule } = require('./webpack.base')
+const { styleModule } = require('./webpack.base');
 
 const config = merge(baseConfig, {
-  mode: "production",
+  mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
-      ...styleModule()
-    ]
+      ...styleModule(),
+    ],
   },
   optimization: {
     runtimeChunk: {
-      name: 'runtime'
+      name: 'runtime',
     },
     splitChunks: {
       cacheGroups: {
@@ -27,16 +27,16 @@ const config = merge(baseConfig, {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           reuseExistingChunk: true,
-          name: 'commons'
+          name: 'commons',
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
-  }
-})
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
+});
 
-module.exports = config
+module.exports = config;

@@ -1,5 +1,3 @@
-const path = require('path')
+const path = require('path');
 
-exports.resolve = src => {
-  return path.resolve(__dirname, src)
-}
+exports.resolve = (src) => path.resolve(__dirname, src);
