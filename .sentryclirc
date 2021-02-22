@@ -1,0 +1,6 @@
+[auth]
+token=26a64f084d3d4e52ba537a873a66b721f95bd6971ef84505bb8a30e0e8009bdb
+[defaults]
+url=https://sentry.io/
+org=woai3c
+project=woai3c

@@ -23,6 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
+    "@sentry/webpack-plugin": "^1.14.1",
     "autoprefixer": "^10.2.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
@@ -56,6 +57,7 @@
     "@sentry/browser": "^6.2.0",
     "@sentry/integrations": "^6.2.0",
     "@sentry/tracing": "^6.2.0",
+    "sentry-cli-binary": "^1.25.0",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
